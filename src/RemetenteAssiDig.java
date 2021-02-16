@@ -40,16 +40,16 @@ public class RemetenteAssiDig {
     InvalidKeyException, SignatureException, InvalidKeySpecException {
         Signature sig = Signature.getInstance("DSA");
         KeyFactory keyFactory = KeyFactory.getInstance("DSA");
-        // GeraÃ§Ã£o das chaves pÃºblicas e privadas
+        // Geração das chaves púlicas e privadas
         KeyPairGenerator kpg = KeyPairGenerator.getInstance("DSA");
         SecureRandom secRan = new SecureRandom();
         kpg.initialize(512, secRan);
         KeyPair keyP = kpg.generateKeyPair();
-        // Gera chave pÃºblica
+        // Gera chave pública
         this.pubKey = keyP.getPublic();
-        // Converte chave pÃºblica em bytes (para gravar na base, por exemplo)
+        // Converte chave pública em bytes (para gravar na base, por exemplo)
         this.publicKeyBytes = this.pubKey.getEncoded();
-        // Recupera chave pÃºblica (da base, por exemplo)
+        // Recupera chave pública (da base, por exemplo)
         EncodedKeySpec publicKeySpec = new X509EncodedKeySpec(publicKeyBytes);
         this.publicKey = keyFactory.generatePublic(publicKeySpec);
         // Gera chave privada

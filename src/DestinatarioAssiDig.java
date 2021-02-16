@@ -17,7 +17,7 @@ public class DestinatarioAssiDig {
 	          System.out.println("A Mensagem recebida foi assinada corretamente.");
 	       } else {
 	           //Mensagem não pode ser validada
-	          System.out.println("A Mensagem recebida NÃO pode ser validada.");
+	          System.out.println("A Mensagem recebida N�O pode ser validada.");
 	       }
 	   }
 

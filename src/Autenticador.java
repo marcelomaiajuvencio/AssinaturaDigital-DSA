@@ -12,15 +12,15 @@ public class Autenticador {
 		       RemetenteAssiDig remetenteAssiDig = new RemetenteAssiDig();
 		       String mensagem = "Exemplo de mensagem.";
 		     byte[] assinatura = remetenteAssiDig.geraAssinatura(mensagem);
-		     //Guarda Chave PÃºblica para ser Enviada ao DestinatÃ¡rio
+		     //Guarda Chave Pública para ser Enviada ao Destinatário
 		     //PublicKey pubKey = remetenteAssiDig.getPubKey();
 		     PublicKey pubKey = remetenteAssiDig.getPubKey2();
 		     
-		     //DestinatÃ¡rio recebe dados correto
+		     //Destinatário recebe dados correto
 		     DestinatarioAssiDig destinatarioAssiDig = new DestinatarioAssiDig();
 		     destinatarioAssiDig.recebeMensagem(pubKey, mensagem, assinatura);
 
-		     //DestinatÃ¡rio recebe mensagem alterada
+		     //Destinatário recebe mensagem alterada
 		     String msgAlterada = "Exemplo de mensagem alterada.";
 		     destinatarioAssiDig.recebeMensagem(pubKey, msgAlterada, assinatura);
 
@@ -28,13 +28,13 @@ public class Autenticador {
 		       //String mensagem2 = "Exemplo de outra mensagem.";
 		       String mensagem2 = "Exemplo de mensagem.";
 		     byte[] assinatura2 = remetenteAssiDig.geraAssinatura(mensagem2);
-		     //Guarda Chave PÃºblica para ser Enviada ao DestinatÃ¡rio
+		     //Guarda Chave Pública para ser Enviada ao Destinatário
 		     PublicKey pubKey2 = remetenteAssiDig.getPubKey();
 
-		     //DestinatÃ¡rio recebe outra assinatura
+		     //Destinatário recebe outra assinatura
 		     destinatarioAssiDig.recebeMensagem(pubKey, mensagem, assinatura2);
 
-		     //DestinatÃ¡rio recebe outra chave pÃºblica
+		     //Destinatário recebe outra chave pública
 		     destinatarioAssiDig.recebeMensagem(pubKey2, mensagem, assinatura);
 
 	}
